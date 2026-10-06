@@ -2,8 +2,7 @@
 
 ## MCP server
 
- I connected two project-scoped servers in `.mcp.json`: `context7` and `memory`. Context7 is the most useful here because this is an Express API, and it lets Claude pull current Express and ESLint docs instead of relying on training data that may be out of date. The `memory` server keeps a knowledge graph in `.claude/memory.json` so context can persist between sessions. The permission rule in `.claude/settings.json` allows only Context7's `resolve-library-id` and `query-docs` tools without prompting; memory tools and all other MCP tools still require approval.
-
+I connected one project-scoped server in `.mcp.json`: `context7`. It is the most useful here because this is an Express API, and it lets Claude pull current Express and ESLint docs instead of relying on training data that may be out of date. The permission rule in `.claude/settings.json` allows only Context7's `resolve-library-id` and `query-docs` tools without prompting; all other MCP tools still require approval.
 
 ## Skill
 
@@ -16,7 +15,6 @@ I added `/changes`, which takes an optional base branch or commit. It gathers th
 ## Hook
 
 I set a `PostToolUse` hook that matches `Edit|Write|MultiEdit|NotebookEdit` and runs Prettier on the edited file. It reacts rather than prevents: it runs after the edit has already happened and cleans up the formatting, and it never blocks anything (the command ends in `|| true`). A `.prettierrc` with `singleQuote` keeps its output consistent with the existing code style.
-
 
 ## Headless
 
