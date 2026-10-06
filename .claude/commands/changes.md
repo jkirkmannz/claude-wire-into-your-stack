@@ -1,7 +1,7 @@
 ---
 description: Summarize what has changed in the repo
 argument-hint: [base-branch-or-commit]
-allowed-tools: allowed-tools: Bash(git branch --show-current), Bash(git status --short), Bash(git diff --stat HEAD), Bash(git log --oneline -10)
+allowed-tools: Bash(git branch --show-current), Bash(git status:*), Bash(git diff:*), Bash(git log:*)
 ---
 
 ## Context
