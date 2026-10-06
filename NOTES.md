@@ -15,3 +15,9 @@ I added `/changes`, which takes an optional base branch or commit. It gathers th
 ## Hook
 
 I set a `PostToolUse` hook that matches `Edit|Write|MultiEdit|NotebookEdit` and runs Prettier on the edited file. It reacts rather than prevents: it runs after the edit has already happened and cleans up the formatting, and it never blocks anything (the command ends in `|| true`). A `.prettierrc` with `singleQuote` keeps its output consistent with the existing code style.
+
+
+## Headless
+
+The headless command was: claude -p "Summarize what this project does in 3 bullets" --allowedTools "Bash(bash:*),Read"
+It was permitted to use bash commands to read the files, and prohibited from updating anything.
