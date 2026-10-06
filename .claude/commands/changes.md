@@ -1,7 +1,7 @@
 ---
 description: Summarize what has changed in the repo
 argument-hint: [base-branch-or-commit]
-allowed-tools: Bash(git branch --show-current), Bash(git status:*), Bash(git diff:*), Bash(git log:*)
+allowed-tools: allowed-tools: Bash(git branch --show-current), Bash(git status --short), Bash(git diff --stat HEAD), Bash(git log --oneline -10)
 ---
 
 ## Context
@@ -9,7 +9,7 @@ allowed-tools: Bash(git branch --show-current), Bash(git status:*), Bash(git dif
 - Current branch: !`git branch --show-current`
 - Status: !`git status --short`
 - Recent commits: !`git log --oneline -10`
-- Diff stats vs ${ARGUMENTS:-HEAD}: !`git diff --stat ${ARGUMENTS:-HEAD}`
+- Comparison base: $ARGUMENTS (use HEAD when empty). Before summarizing, run `git diff --stat` against this base.
 
 ## Task
 
