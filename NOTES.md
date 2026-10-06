@@ -2,7 +2,8 @@
 
 ## MCP server
 
-I connected two project-scoped servers in `.mcp.json`: `context7` and `memory`. Context7 is the most useful here because this is an Express API, and it lets Claude pull current Express and ESLint docs instead of relying on training data that may be out of date. The `memory` server keeps a knowledge graph in `.claude/memory.json` so context can persist between sessions. The permission rule in `.claude/settings.json` allows `mcp__context7` and `mcp__memory`, which approves every tool on those two servers without a prompt each time. It doesn't allow any other server.
+ I connected two project-scoped servers in `.mcp.json`: `context7` and `memory`. Context7 is the most useful here because this is an Express API, and it lets Claude pull current Express and ESLint docs instead of relying on training data that may be out of date. The `memory` server keeps a knowledge graph in `.claude/memory.json` so context can persist between sessions. The permission rule in `.claude/settings.json` allows only Context7's `resolve-library-id` and `query-docs` tools without prompting; memory tools and all other MCP tools still require approval.
+
 
 ## Skill
 
