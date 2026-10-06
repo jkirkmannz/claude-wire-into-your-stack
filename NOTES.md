@@ -19,5 +19,5 @@ I set a `PostToolUse` hook that matches `Edit|Write|MultiEdit|NotebookEdit` and 
 
 ## Headless
 
-The headless command was: claude -p "Summarize what this project does in 3 bullets" --allowedTools "Bash(bash:*),Read"
-It was permitted to use bash commands to read the files, and prohibited from updating anything.
+The headless command was: claude -p "Summarize what this project does in 3 bullets" --allowedTools "Read"
+It was permitted to use commands to read the files, and prohibited from updating anything.
